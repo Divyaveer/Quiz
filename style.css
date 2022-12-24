@@ -1,0 +1,274 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body{
+    width: 100vw;
+    height: 100vh;
+    overflow: hidden;
+    background: linear-gradient(45deg, #fff, #0f0);
+}
+
+.container{
+    width: 100%;
+    height: 100%;
+}
+
+.container header{
+    width: 100%;
+    /* padding: 0 10PX; */
+}
+
+.container header .navbar{
+    background: #333;
+    color: #fff;
+    width: 100%;
+    height: 50px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.container header .login_container h4 a{
+    text-decoration: none;
+    color: #fff;
+    position: absolute;
+    top: 1rem;
+    left: 50%;
+}
+
+.container header .login_container ul{
+    width: calc(300/12.8);
+    height: calc(100/7.2);
+    background: #fff;
+    box-shadow: 0 2px 5px #f0f;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    flex-direction: column;
+    border-radius: 10px;
+    position: absolute;
+    top: -20%;
+    left: 52.5%;
+    transform: translateX(-50%) scale(.1);
+    padding: 10px 30px;
+    margin-top: 5px;
+    background: #2980b9;
+    color: #fff;
+    opacity: 0;
+    visibility: hidden;
+    transition: .5s;
+    pointer-events: none;
+}
+
+.container header .login_container ul.active{
+    top: 2.99rem;
+    opacity: 1;
+    pointer-events: all;
+    visibility: visible;
+    transform: translateX(-50%) scale(1);
+}
+
+.container header .login_container ul li{
+    list-style: none;
+}
+
+.container header .login_container ul li button{
+    padding: 0 5px;
+    outline: none;
+    border-radius: 10px;
+    border: 1px solid;
+    cursor: pointer;
+}
+
+.container header .login_container ul li .input{
+    text-align: center;
+    border: 1px solid;
+    border-radius: 20px;
+    outline: none;
+}
+
+.container header .navbar .title{
+    padding: .75rem;
+    font-size: 1.5rem;
+}
+
+.container header .menu{
+    background-color: #ff216d;
+}
+
+.container header .menu .toggle{
+    position: absolute;
+    top: 0;
+    right: 0;
+    width: 15%;
+    height: 50px;               /* Later */
+    background: #333;
+    cursor: pointer;
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    color: #fff;
+    padding: 5px 20px;
+    z-index: 10;
+}
+
+.container header .menu .toggle::before{
+    content: 'Menu';
+    margin-right: 20px;
+}
+
+.container header .menu .toggle.active::before{
+    content: 'Close';
+}
+
+.container header .menu .toggle span{
+    position: relative;
+    width: 50px;
+    height: 50px;
+}
+
+.container header .menu .toggle span::before{
+    content: '';
+    position: absolute;
+    top: 20px;
+    left: 0;
+    /* width: 100%; */
+    width: 30px;
+    height: 2px;
+    background: #ff216d;
+    transition: .5s;
+}
+
+.container header .menu .toggle span::after{
+    content: '';
+    position: absolute;
+    bottom: 20px;
+    left: 0;
+    /* width: 100%; */
+    width: 30px;
+    height: 2px;
+    background: #ff216d;
+    transition: .5s;
+}
+
+.container header .menu .toggle.active span::before{
+    transform: rotate(225deg);
+    top: 24px;
+}
+
+.container header .menu .toggle.active span::after{
+    transform: rotate(135deg);
+    bottom: 24px;
+}
+
+.container header .menu ul{
+    position: absolute;
+    right: 0;
+    top: 3.2rem;
+    display: flex;
+    flex-direction: column;
+    z-index: 10;
+}
+
+.container header .menu ul li {
+    position: relative;
+    list-style: none;
+    transition: .5s;
+    width: 120px;
+    visibility: hidden;
+    text-align: center;
+    opacity: 0;
+    transform: translateX(-250px);
+    transition-delay: calc(.1s * var(--i));
+}
+
+.container header .navbar.active ~ .menu ul li{
+    visibility: visible;
+    opacity: 1;
+    transform: translateX(0);
+}
+
+.container header .menu ul li a{
+    position: relative;
+    text-decoration: none;
+    display: block;
+    padding: 10px 20px;
+    height: 40px;
+    background: #333;
+    color: #fff;
+    transition: .5s;
+    cursor: pointer;
+    z-index: 100;
+}
+
+.container header .menu ul li a:hover{
+    background: #ff216d;
+    color: #fff;
+    transition: 0s;
+}
+
+.container .content{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-evenly;
+}
+
+ .porfile{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
+    margin-right: 30px;
+}
+
+.profile img{
+    width: 200px;
+    height: 200px;
+    border: 2px solid;
+    border-radius: 50%;
+    padding: 20px;
+}
+
+.profile h2{
+    font-size: 1rem;
+}
+
+.container .content .project{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .content .project div{
+    width: 200px;
+    height: 200px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.container .content .project div a{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-decoration: none;
+    color: #000;
+    font-size: 2rem;
+    border: 2px solid;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    background: #ffdd59;
+    font-weight: bolder;
+}
+
+.container .content .project div a span{
+    color: darkred;
+    font-size: 1rem;
+}
+

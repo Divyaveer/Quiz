@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Project 92</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <nav class="navbar">
+                <div class="title">DAKS:Coding</div>
+            </nav>
+            <div class="login_container">
+                <h4><a href="#" data-login-a>Login</a></h4>
+                <ul class="login_data">
+                    <li>Email: <input type="text" class="login input" placeholder="Enter Email"></li>
+                    <li>Password: <input type="text" class="password input" placeholder="Enter Password"></li>
+                    <li><button class="btn">Login</button></li>
+                </ul>
+            </div>
+            <div class="menu">
+                <div class="toggle">
+                    <span></span>
+                </div>
+                <ul>
+                    <li style="--i:0;" class="remove"><a href="#" onclick="remove();">Home</a></li>
+                    <li style="--i:1;" class="remove"><a href="quiz_login.html" onclick="remove();">Whjr_Projects</a></li>
+                    <li style="--i:2;" class="remove"><a href="#" onclick="remove();">Games</a></li>
+                    <li style="--i:3;" class="remove"><a href="#" onclick="remove();">Services</a></li>
+                    <li style="--i:4;" class="remove"><a href="#" onclick="remove();">Team</a></li>
+                    <li style="--i:5;" class="remove"><a href="#" onclick="remove();">about</a></li>
+                    <li style="--i:6;" class="remove"><a href="#" onclick="remove();">Contact</a></li>
+                </ul>
+            </div>
+        </header>
+        <!-- Body Section   -->
+        <div class="content">
+
+            <div class="profile">
+                <img src="Profile_pic.png">
+                <h2>Proud Coder from WhiteHatJr.</h2>
+            </div>
+            
+            <div class="project">
+                <div>
+                    <a href="quiz_login.html">Click for<br> Project 92</a>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+
+    <script>
+
+        let navbar = document.querySelector('.navbar');
+        let login_data = document.querySelector('.login_data');
+        let Remove = document.querySelectorAll('.remove');
+
+        let Toggle = document.querySelector('.toggle');
+
+        document.querySelector('.toggle').onclick = function(){
+            this.classList.toggle('active');
+            navbar.classList.toggle('active');
+        };
+
+        document.querySelector('[data-login-a]').onclick = function(){
+            login_data.classList.toggle('active');
+        };
+
+        Remove.onclick = function (){
+            Toggle.classList.toggle('active');
+            navbar.classList.toggle('active');
+        };
+    </script>
+</body>
+</html>
